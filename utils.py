@@ -1,5 +1,2 @@
 def is_empty(value):
-    if value == "" or value is None:
-        return True
-    return False
-
+    return value is None or value.strip() == ""
