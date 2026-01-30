@@ -4,19 +4,20 @@ from user_service import register_user
 def main():
     print("Welcome to User System")
 
-    action = input("login/register: ")
+    # Ask user for action: login or register
+    action = input("login/register: ").strip().lower()
 
     if action == "login":
-        u = input("username: ")
-        p = input("password: ")
-        print(login(u, p))
+        username = input("username: ").strip()
+        password = input("password: ").strip()
+        print(login(username, password))
     elif action == "register":
-        u = input("username: ")
-        p = input("password: ")
-        register_user(u, p)
-        print("user created")
+        username = input("username: ").strip()
+        password = input("password: ").strip()
+        result = register_user(username, password)
+        print(result)
     else:
-        print("unknown action")
+        print("Unknown action. Please type 'login' or 'register'.")
 
 if __name__ == "__main__":
     main()
