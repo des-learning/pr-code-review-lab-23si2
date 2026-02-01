@@ -1,4 +1,3 @@
-Janice Tjuarsa
 # PR Code Review Lab
 
 This repository is used for learning **code review through Pull Requests**.
