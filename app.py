@@ -3,20 +3,41 @@ from user_service import register_user
 
 def main():
     print("Welcome to User System")
-
-    action = input("login/register: ")
-
-    if action == "login":
-        u = input("username: ")
-        p = input("password: ")
-        print(login(u, p))
-    elif action == "register":
-        u = input("username: ")
-        p = input("password: ")
-        register_user(u, p)
-        print("user created")
-    else:
-        print("unknown action")
+    
+    try:
+        action = input("login/register: ").strip().lower()
+        
+        if action == "login":
+            username = input("username: ").strip()
+            password = input("password: ").strip()
+            
+            if not username or not password:
+                print("Username dan password harus diisi!")
+                return
+                
+            print(login(username, password))
+            
+        elif action == "register":
+            username = input("username: ").strip()
+            password = input("password: ").strip()
+            
+            if not username or not password:
+                print("Username dan password harus diisi!")
+                return
+            
+            if len(password) < 6:
+                print("Password minimal 6 karakter!")
+                return
+                
+            register_user(username, password)
+            print("user created")
+        else:
+            print("unknown action")
+            
+    except KeyboardInterrupt:
+        print("\nProgram dihentikan")
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()
