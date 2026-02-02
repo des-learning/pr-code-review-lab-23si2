@@ -3,7 +3,11 @@ import sys
 
 def register_user(username, password):
     with open("data/users.json") as f:
-        users = json.load(f)
+        try:
+            users = json.load(f)
+        except json.JSONDecodeError:
+            users = []
+
 
     users.append({
         "username": username,

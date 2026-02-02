@@ -3,6 +3,7 @@ from user_service import register_user
 
 def main():
     print("Welcome to User System")
+    print("PR practice by Cariven Tan") 
 
     action = input("login/register: ")
 
