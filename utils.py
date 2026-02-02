@@ -1,5 +1,8 @@
 def is_empty(value):
-    if value == "" or value is None:
+    if value is None:
         return True
-    return False
 
+    if isinstance(value, str) and value.strip() == "":
+        return True
+
+    return False
