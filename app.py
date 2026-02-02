@@ -7,13 +7,13 @@ def main():
     action = input("login/register: ")
 
     if action == "login":
-        u = input("username: ")
-        p = input("password: ")
-        print(login(u, p))
+        username = input("username: ")
+        password = input("password: ")
+        print(login(username, password))
     elif action == "register":
-        u = input("username: ")
-        p = input("password: ")
-        register_user(u, p)
+        username = input("username: ")
+        password = input("password: ")
+        register_user(username, password)
         print("user created")
     else:
         print("unknown action")
