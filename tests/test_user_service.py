@@ -1,6 +1,7 @@
 from user_service import register_user
 
 def test_register():
-    register_user("test", "123")
-    assert True
+    user = register_user("testuser", "test123")
 
+    assert user is not None
+    assert user["username"] == "testuser"

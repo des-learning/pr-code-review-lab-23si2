@@ -1,7 +1,9 @@
 [
   {
+    "id": 1,
     "username": "admin",
-    "password": "admin123"
+    "password": "$2y$10$K9ZQe6uGJmQZx1xXvYz6eO9YyZ7n5uYwQF0K8QzPjv2n6BzR2yXq",
+    "role": "admin",
+    "status": "active"
   }
 ]
-
