@@ -1,15 +1,18 @@
 import json
 import sys
+from utils import load_users, save_users
 
 def register_user(username, password):
-    with open("data/users.json") as f:
-        users = json.load(f)
-
-    users.append({
-        "username": username,
-        "password": password
-    })
-
-    with open("data/users.json", "w") as f:
-        json.dump(users, f)
-
+    users = load_users()
+    
+    if any(u["username"] == username for u in users):
+        print("Username already exists")
+        return
+    
+    users.append({"username": username, "password": password})
+    
+    if save_users(users):
+        print("User registered successfully")
+    else:
+        print("Failed to save new user")
+        sys.exit(1)
