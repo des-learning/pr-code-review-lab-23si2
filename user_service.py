@@ -12,4 +12,3 @@ def register_user(username, password):
 
     with open("data/users.json", "w") as f:
         json.dump(users, f)
-
