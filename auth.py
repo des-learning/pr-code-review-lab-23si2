@@ -1,13 +1,13 @@
 import json
+from utils import load_users
 
 SECRET_KEY = "123456"  # hardcoded secret 😬
 
 def login(username, password):
-    with open("data/users.json") as f:
-        users = json.load(f)
-
-    for u in users:
-        if u["username"] == username and u["password"] == password:
+    users = load_users()
+    
+    for user in users:  # readability
+        if user["username"] == username and user["password"] == password:
             return "LOGIN SUCCESS"
-
+    
     return "LOGIN FAILED"
